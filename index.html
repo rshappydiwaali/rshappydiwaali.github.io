@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -48,12 +47,16 @@
       text-decoration: none;
       border-radius: 6px;
       transition: 0.3s;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-weight: bold;
     }
     .btn:hover { background: #162b44; }
+    .btn.whatsapp { background-color: #25d366; }
+    .btn.whatsapp:hover { background-color: #1ebe5b; }
 
     /* Calculator styling */
     .calculator {
-      background: #8e2de2;
       background: linear-gradient(145deg, #8e2de2, #4a00e0);
       padding: 25px;
       border-radius: 20px;
@@ -103,12 +106,11 @@
       background: #1e3d59;
       color: white;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Portfolio Header -->
+  <!-- Header -->
   <header>
     <h1>Sarvesh Kumar Singh</h1>
     <p>Web Developer | Learner | Creator</p>
@@ -134,7 +136,10 @@
     <!-- Contact Section -->
     <section id="contact">
       <h2>संपर्क करें</h2>
-      <p>आप मुझसे इस ईमेल पर संपर्क कर सकते हैं:</p>
+      <p>आप मुझसे इस ईमेल या WhatsApp पर संपर्क कर सकते हैं:</p>
+      <!-- Correct links -->
+      <a href="mailto:sarveshsingh52966@gmail.com" class="btn">📧 ईमेल भेजें</a>
+      <a href="https://wa.me/919956095565" target="_blank" class="btn whatsapp">💬 Message me on WhatsApp</a>
     </section>
 
     <!-- Calculator Section -->
@@ -235,6 +240,5 @@
 
     updateDisplay();
   </script>
-
 </body>
 </html>
