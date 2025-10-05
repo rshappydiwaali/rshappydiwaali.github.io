@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f3f4f6;
+      font-family: Arial, sans-serif;
+      background-color: #153d5d;
+    }
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 500px;
+      height: 800px;
+      background-color: #a92cab;
+    }
+    .display {
+      background: #222;
+      color: #0ff;
+      font-size: 80px;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: right;
+      overflow-x: auto;
+    }
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      padding: 15px;
+      font-size: 80px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #e5e7eb;
+      transition: 0.2s;
+    }
+    button:hover { background: #d1d5db; }
+    .operator { background: #2563eb; color: white; }
+    .equal { background: #16a34a; color: white; grid-column: span 2; }
+    .clear { background: #dc2626; color: white; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="keys">
+      <button class="clear" data-action="clear">C</button>
+      <button data-action="back">←</button>
+      <button class="operator" data-value="/">÷</button>
+      <button class="operator" data-value="*">×</button>
+
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button class="operator" data-value="-">−</button>
+
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button class="operator" data-value="+">+</button>
+
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button data-value=".">.</button>
+
+      <button data-value="0">0</button>
+      <button class="equal" data-action="equals">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+    const keys = document.querySelectorAll("button");
+
+    let current = "";
+    let expression = "";
+
+    function updateDisplay() {
+      display.textContent = current || expression || "0";
+    }
+
+    function calculate() {
+      try {
+        let result = eval(expression); // eval is fine for small projects
+        display.textContent = result;
+        expression = String(result);
+        current = "";
+      } catch {
+        display.textContent = "Error";
+        expression = "";
+        current = "";
+      }
+    }
+
+    keys.forEach((key) => {
+      key.addEventListener("click", () => {
+        const val = key.getAttribute("data-value");
+        const action = key.getAttribute("data-action");
+
+        if (action === "clear") {
+          current = "";
+          expression = "";
+          updateDisplay();
+        } 
+        else if (action === "back") {
+          current = current.slice(0, -1);
+          updateDisplay();
+        } 
+        else if (action === "equals") {
+          expression += current;
+          calculate();
+        } 
+        else if (val === "+" || val === "-" || val === "*" || val === "/") {
+          if (current !== "") {
+            expression += current;
+            current = "";
+          }
+          if (/[+\-*/]$/.test(expression)) {
+            expression = expression.slice(0, -1); // replace last operator
+          }
+          expression += val;
+          updateDisplay();
+        } 
+        else {
+          current += val;
+          updateDisplay();
+        }
+      });
+    });
+
+    updateDisplay();
+  </script>
+</body>
+</html>
