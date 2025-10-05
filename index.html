@@ -11,6 +11,8 @@
       background: #f0f4f8;
       color: #333;
     }
+
+    /* Header */
     header {
       background: #1e3d59;
       color: white;
@@ -20,6 +22,7 @@
     header h1 { font-size: 3em; margin: 0; }
     header p { font-size: 1.2em; margin-top: 10px; }
 
+    /* Main content */
     main {
       max-width: 1000px;
       margin: 30px auto;
@@ -49,48 +52,57 @@
 
     /* Calculator styling */
     .calculator {
-      background: #a92cab;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      max-width: 400px;
+      background: #8e2de2;
+      background: linear-gradient(145deg, #8e2de2, #4a00e0);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      max-width: 350px;
       margin: 30px auto;
     }
     .display {
-      background: #222;
+      background: #111;
       color: #0ff;
-      font-size: 2em;
+      font-size: 2.5em;
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 12px;
+      margin-bottom: 20px;
       text-align: right;
-      margin-bottom: 15px;
       overflow-x: auto;
+      box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
     }
     .keys {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 12px;
     }
     .keys button {
-      padding: 15px;
+      padding: 20px;
       font-size: 1.5em;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      background: #e5e7eb;
-      transition: 0.2s;
+      transition: 0.3s;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      color: white;
     }
-    .keys button:hover { background: #d1d5db; }
-    .operator { background: #2563eb; color: white; }
-    .equal { background: #16a34a; color: white; grid-column: span 2; }
-    .clear { background: #dc2626; color: white; }
-    
+    .keys button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    .clear { background: #ff4d4d; }      /* Red */
+    .operator { background: #1e90ff; }   /* Blue */
+    .equal { background: #32cd32; grid-column: span 2; } /* Green */
+    .number { background: #333; }        /* Dark gray */
+    .decimal { background: #555; }       /* Gray */
+
     footer {
       text-align: center;
       padding: 20px;
       background: #1e3d59;
       color: white;
     }
+
   </style>
 </head>
 <body>
@@ -132,26 +144,26 @@
         <div class="display" id="display">0</div>
         <div class="keys">
           <button class="clear" data-action="clear">C</button>
-          <button data-action="back">←</button>
+          <button class="operator" data-action="back">←</button>
           <button class="operator" data-value="/">÷</button>
           <button class="operator" data-value="*">×</button>
 
-          <button data-value="7">7</button>
-          <button data-value="8">8</button>
-          <button data-value="9">9</button>
+          <button class="number" data-value="7">7</button>
+          <button class="number" data-value="8">8</button>
+          <button class="number" data-value="9">9</button>
           <button class="operator" data-value="-">−</button>
 
-          <button data-value="4">4</button>
-          <button data-value="5">5</button>
-          <button data-value="6">6</button>
+          <button class="number" data-value="4">4</button>
+          <button class="number" data-value="5">5</button>
+          <button class="number" data-value="6">6</button>
           <button class="operator" data-value="+">+</button>
 
-          <button data-value="1">1</button>
-          <button data-value="2">2</button>
-          <button data-value="3">3</button>
-          <button data-value=".">.</button>
+          <button class="number" data-value="1">1</button>
+          <button class="number" data-value="2">2</button>
+          <button class="number" data-value="3">3</button>
+          <button class="decimal" data-value=".">.</button>
 
-          <button data-value="0">0</button>
+          <button class="number" data-value="0">0</button>
           <button class="equal" data-action="equals">=</button>
         </div>
       </div>
