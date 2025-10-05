@@ -3,24 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarvesh Kumar Singh | मेरी व्यक्तिगत वेबसाइट</title>
-  <meta name="description" content="यह Sarvesh Kumar Singh की व्यक्तिगत वेबसाइट है जहाँ आप उनके बारे में, शिक्षा, और संपर्क जानकारी देख सकते हैं।">
-  <link rel="stylesheet" href="style.css">
+  <title>Sarvesh Kumar Singh | मेरी वेबसाइट</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: #1e3d59;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 { font-size: 3em; margin: 0; }
+    header p { font-size: 1.2em; margin-top: 10px; }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h2 { color: #1e3d59; }
+
+    ul { list-style: square; padding-left: 20px; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1e3d59;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #162b44; }
+
+    /* Calculator styling */
+    .calculator {
+      background: #a92cab;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 30px auto;
+    }
+    .display {
+      background: #222;
+      color: #0ff;
+      font-size: 2em;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: right;
+      margin-bottom: 15px;
+      overflow-x: auto;
+    }
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .keys button {
+      padding: 15px;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #e5e7eb;
+      transition: 0.2s;
+    }
+    .keys button:hover { background: #d1d5db; }
+    .operator { background: #2563eb; color: white; }
+    .equal { background: #16a34a; color: white; grid-column: span 2; }
+    .clear { background: #dc2626; color: white; }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e3d59;
+      color: white;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Portfolio Header -->
   <header>
-    <div class="container">
-      <h1>Sarvesh Kumar Singh</h1>
-      <p>Web Developer | Learner | Creator</p>
-    </div>
+    <h1>Sarvesh Kumar Singh</h1>
+    <p>Web Developer | Learner | Creator</p>
   </header>
 
   <main>
+    <!-- About Section -->
     <section id="about">
       <h2>मेरे बारे में</h2>
-      <p>नमस्ते! मैं Sarvesh हूँ। मुझे वेबसाइट बनाना, नई चीजें सीखना और टेक्नोलॉजी के साथ प्रयोग करना पसंद है। यह मेरी पहली व्यक्तिगत वेबसाइट है जो HTML, CSS और JavaScript से बनी है।</p>
+      <p>नमस्ते! मैं Sarvesh हूँ। मुझे वेबसाइट बनाना, नई चीजें सीखना और टेक्नोलॉजी के साथ प्रयोग करना पसंद है। यह मेरी पहली व्यक्तिगत वेबसाइट है।</p>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
       <h2>मेरे कौशल</h2>
       <ul>
@@ -30,10 +118,43 @@
       </ul>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>संपर्क करें</h2>
       <p>आप मुझसे इस ईमेल पर संपर्क कर सकते हैं:</p>
       <a href="mailto:yourname@gmail.com" class="btn">ईमेल भेजें</a>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator">
+      <h2>Simple Calculator</h2>
+      <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="keys">
+          <button class="clear" data-action="clear">C</button>
+          <button data-action="back">←</button>
+          <button class="operator" data-value="/">÷</button>
+          <button class="operator" data-value="*">×</button>
+
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button class="operator" data-value="-">−</button>
+
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+          <button class="operator" data-value="+">+</button>
+
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button data-value=".">.</button>
+
+          <button data-value="0">0</button>
+          <button class="equal" data-action="equals">=</button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -41,97 +162,9 @@
     <p>© 2025 Sarvesh Kumar Singh | सभी अधिकार सुरक्षित</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Calculator</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f3f4f6;
-      font-family: Arial, sans-serif;
-      background-color: #153d5d;
-    }
-    .calculator {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      width: 500px;
-      height: 800px;
-      background-color: #a92cab;
-    }
-    .display {
-      background: #222;
-      color: #0ff;
-      font-size: 80px;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      text-align: right;
-      overflow-x: auto;
-    }
-    .keys {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-    button {
-      padding: 15px;
-      font-size: 80px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #e5e7eb;
-      transition: 0.2s;
-    }
-    button:hover { background: #d1d5db; }
-    .operator { background: #2563eb; color: white; }
-    .equal { background: #16a34a; color: white; grid-column: span 2; }
-    .clear { background: #dc2626; color: white; }
-  </style>
-</head>
-<body>
-  <div class="calculator">
-    <div class="display" id="display">0</div>
-    <div class="keys">
-      <button class="clear" data-action="clear">C</button>
-      <button data-action="back">←</button>
-      <button class="operator" data-value="/">÷</button>
-      <button class="operator" data-value="*">×</button>
-
-      <button data-value="7">7</button>
-      <button data-value="8">8</button>
-      <button data-value="9">9</button>
-      <button class="operator" data-value="-">−</button>
-
-      <button data-value="4">4</button>
-      <button data-value="5">5</button>
-      <button data-value="6">6</button>
-      <button class="operator" data-value="+">+</button>
-
-      <button data-value="1">1</button>
-      <button data-value="2">2</button>
-      <button data-value="3">3</button>
-      <button data-value=".">.</button>
-
-      <button data-value="0">0</button>
-      <button class="equal" data-action="equals">=</button>
-    </div>
-  </div>
-
   <script>
     const display = document.getElementById("display");
-    const keys = document.querySelectorAll("button");
-
+    const keys = document.querySelectorAll(".keys button");
     let current = "";
     let expression = "";
 
@@ -141,7 +174,7 @@
 
     function calculate() {
       try {
-        let result = eval(expression); // eval is fine for small projects
+        let result = eval(expression);
         display.textContent = result;
         expression = String(result);
         current = "";
@@ -176,7 +209,7 @@
             current = "";
           }
           if (/[+\-*/]$/.test(expression)) {
-            expression = expression.slice(0, -1); // replace last operator
+            expression = expression.slice(0, -1);
           }
           expression += val;
           updateDisplay();
@@ -190,7 +223,6 @@
 
     updateDisplay();
   </script>
+
 </body>
-
 </html>
-
