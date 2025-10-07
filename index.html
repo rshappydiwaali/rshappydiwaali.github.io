@@ -1,185 +1,273 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarvesh Kumar Singh | मेरी वेबसाइट</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarvesh Kumar Singh | मेरी वेबसाइट</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f0f4f8;
-      color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f0f4f8;
+        color: #333;
     }
 
-    /* Header */
     header {
-      background: #1e3d59;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
+        background: #1e3d59;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
     }
     header h1 { font-size: 3em; margin: 0; }
     header p { font-size: 1.2em; margin-top: 10px; }
 
-    /* Main content */
     main {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
     section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: white;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     h2 { color: #1e3d59; }
-
     ul { list-style: square; padding-left: 20px; }
 
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #1e3d59;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: 0.3s;
-      margin-top: 10px;
-      margin-right: 10px;
-      font-weight: bold;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #1e3d59;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: 0.3s;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-weight: bold;
     }
     .btn:hover { background: #162b44; }
     .btn.whatsapp { background-color: #25d366; }
     .btn.whatsapp:hover { background-color: #1ebe5b; }
 
-    /* Calculator styling */
+    /* Smile Button Styles */
+    .smile-btn-container {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    .smile-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 60px 30px;
+        font-size: 40px;
+        font-weight: 800;
+        color: #fa06c180;
+        background: #1e3d59;;
+        border: 2px solid #f304e780;
+        border-radius: 20px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.5s;
+        flex-wrap: wrap;
+    }
+    .smile-btn:hover {
+        color: #3707e6;
+        background: #f803b3;
+        text-shadow: 0 0 5px #e8f905, 0 0 10px #fafa07, 0 0 20px #fff;
+        box-shadow: 0 0 10px #008cff, 0 0 40px #008cff, 0 0 80px #008cff;
+    }
+    .smile-btn img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50% 0% 50% 0%;
+        object-fit: cover;
+        object-position: center;
+        border: 4px solid rgba(50, 6, 249, 0.4);
+        box-shadow: inset 0 0 20px rgba(3, 250, 48, 0.2),
+                    0 0 10px rgba(81, 6, 243, 0.5);
+        background: rgba(3, 244, 83, 0.918);
+        transition: 0.3s ease;
+    }
+    .smile-btn:hover img {
+        transform: scale(1.05);
+        box-shadow: inset 0 0 25px rgba(255,255,255,0.3),
+                    0 0 15px rgba(0,0,0,0.7);
+    }
+    .smile-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        box-shadow: inset 0 0 25px rgba(255,255,255,0.2);
+        pointer-events: none;
+    }
+
+    /* Calculator Styles */
     .calculator {
-      background: linear-gradient(145deg, #8e2de2, #4a00e0);
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      max-width: 350px;
-      margin: 30px auto;
+        background: linear-gradient(145deg, #8e2de2, #4a00e0);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        max-width: 350px;
+        margin: 30px auto;
     }
     .display {
-      background: #111;
-      color: #0ff;
-      font-size: 2.5em;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      text-align: right;
-      overflow-x: auto;
-      box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
+        background: #111;
+        color: #0ff;
+        font-size: 2.5em;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        text-align: right;
+        overflow-x: auto;
+        box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
     }
     .keys {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
     }
     .keys button {
-      padding: 20px;
-      font-size: 1.5em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-      color: white;
+        padding: 20px;
+        font-size: 1.5em;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        color: white;
     }
     .keys button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
     }
-    .clear { background: #ff4d4d; }      /* Red */
-    .operator { background: #1e90ff; }   /* Blue */
-    .equal { background: #32cd32; grid-column: span 2; } /* Green */
-    .number { background: #333; }        /* Dark gray */
-    .decimal { background: #555; }       /* Gray */
+    .clear { background: #ff4d4d; }
+    .operator { background: #1e90ff; }
+    .equal { background: #32cd32; grid-column: span 2; }
+    .number { background: #333; }
+    .decimal { background: #555; }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e3d59;
-      color: white;
+        text-align: center;
+        padding: 20px;
+        background: #1e3d59;
+        color: white;
     }
-  </style>
+
+    /* Responsive */
+    @media(max-width: 600px){
+        .smile-btn {
+            flex-direction: column;
+            gap: 20px;
+            font-size: 28px;
+            padding: 40px 20px;
+        }
+        .smile-btn img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+<header>
     <h1>Sarvesh Kumar Singh</h1>
     <p>Web Developer | Learner | Creator</p>
-  </header>
+</header>
 
-  <main>
-    <!-- About Section -->
+<main>
     <section id="about">
-      <h2>मेरे बारे में</h2>
-      <p>नमस्ते! मैं Sarvesh हूँ। मुझे वेबसाइट बनाना, नई चीजें सीखना और टेक्नोलॉजी के साथ प्रयोग करना पसंद है। यह मेरी पहली व्यक्तिगत वेबसाइट है।</p>
+        <h2>मेरे बारे में</h2>
+        <p>नमस्ते! मैं Sarvesh हूँ। मुझे वेबसाइट बनाना, नई चीजें सीखना और टेक्नोलॉजी के साथ प्रयोग करना पसंद है। यह मेरी पहली व्यक्तिगत वेबसाइट है।</p>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
-      <h2>मेरे कौशल</h2>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Responsive Web Design</li>
-        <li>Basic SEO Optimization</li>
-      </ul>
+        <h2>मेरे कौशल</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Responsive Web Design</li>
+            <li>Basic SEO Optimization</li>
+        </ul>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
-      <h2>संपर्क करें</h2>
-      <p>आप मुझसे इस ईमेल या WhatsApp पर संपर्क कर सकते हैं:</p>
-      <!-- Correct links -->
-      <a href="mailto:sarveshsingh52966@gmail.com" class="btn">📧 ईमेल भेजें</a>
-      <a href="https://wa.me/919956095565" target="_blank" class="btn whatsapp">💬 Message me on WhatsApp</a>
+        <h2>संपर्क करें</h2>
+        <p>आप मुझसे इस ईमेल या WhatsApp पर संपर्क कर सकते हैं:</p>
+       
     </section>
-
-    <!-- Calculator Section -->
-    <section id="calculator">
-      <h2>Simple Calculator</h2>
-      <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="keys">
-          <button class="clear" data-action="clear">C</button>
-          <button class="operator" data-action="back">←</button>
-          <button class="operator" data-value="/">÷</button>
-          <button class="operator" data-value="*">×</button>
-
-          <button class="number" data-value="7">7</button>
-          <button class="number" data-value="8">8</button>
-          <button class="number" data-value="9">9</button>
-          <button class="operator" data-value="-">−</button>
-
-          <button class="number" data-value="4">4</button>
-          <button class="number" data-value="5">5</button>
-          <button class="number" data-value="6">6</button>
-          <button class="operator" data-value="+">+</button>
-
-          <button class="number" data-value="1">1</button>
-          <button class="number" data-value="2">2</button>
-          <button class="number" data-value="3">3</button>
-          <button class="decimal" data-value=".">.</button>
-
-          <button class="number" data-value="0">0</button>
-          <button class="equal" data-action="equals">=</button>
+    <section id="smile">
+        <div class="smile-btn-container">
+            <button class="smile-btn">
+                 <a href="mailto:sarveshsingh52966@gmail.com" class="btn">📧 ईमेल भेजें</a>
+        
+        </button>
         </div>
-      </div>
+        </section>
+         <section id="smile">
+        <div class="smile-btn-container">
+            <button class="smile-btn">
+                  <a href="https://wa.me/919956095565" target="_blank" class="btn whatsapp">💬 WhatsApp Message</a>
+        
+        </button>
+        </div>
+        </section>
+       
+
+    <!-- Smile Button Section -->
+    <section id="smile">
+        <div class="smile-btn-container">
+            <button class="smile-btn">
+                <img src="sarve.jpg" alt="left">
+                💕💕SARVESH SINGH💕💕
+                <img src="sarve.jpg" alt="right">
+            </button>
+        </div>
     </section>
-  </main>
 
-  <footer>
+    <section id="calculator" id="smile" >
+        <h2>Simple Calculator</h2>
+        <div class="calculator">
+            <div class="display" class="smile-btn-container" id="display">0</div>
+            <div class="keys">
+                <button class="smile-btn clear" data-action="clear">C</button>
+                <button class="smile-btn operator" data-action="back">←</button>
+                <button class="smile-btn operator" data-value="/">÷</button>
+                <button class="smile-btn operator" data-value="*">×</button>
+
+                <button class="smile-btn number" data-value="7">7</button>
+                <button class="smile-btn number" data-value="8">8</button>
+                <button class="smile-btn number" data-value="9">9</button>
+                <button class="smile-btn operator" data-value="-">−</button>
+
+                <button class="smile-btn number" data-value="4">4</button>
+                <button class="smile-btn number" data-value="5">5</button>
+                <button class="smile-btn number" data-value="6">6</button>
+                <button class="smile-btn operator" data-value="+">+</button>
+
+                <button class="smile-btn number" data-value="1">1</button>
+                <button class="smile-btn number" data-value="2">2</button>
+                <button class="smile-btn number" data-value="3">3</button>
+                <button class="smile-btn decimal" data-value=".">.</button>
+
+                <button class="smile-btn number" data-value="0">0</button>
+                <button class="smile-btn equal" data-action="equals">=</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
     <p>© 2025 Sarvesh Kumar Singh | सभी अधिकार सुरक्षित</p>
-  </footer>
+</footer>
 
-  <script>
+<script>
     const display = document.getElementById("display");
     const keys = document.querySelectorAll(".keys button");
     let current = "";
@@ -239,6 +327,6 @@
     });
 
     updateDisplay();
-  </script>
+</script>
 </body>
 </html>
