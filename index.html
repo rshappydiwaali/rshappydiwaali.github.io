@@ -11,6 +11,13 @@
         background: #f0f4f8;
         color: #333;
     }
+    .header-text p{margin: 5px 0 0;
+    font-size: 16px;
+color: black;}
+.header-text h1{margin: 0;
+    font-size: 24px;}
+    .header-text{ text-align: center;}
+
 
     header {
         background: #1e3d59;
@@ -35,6 +42,25 @@
     }
     h2 { color: #1e3d59; }
     ul { list-style: square; padding-left: 20px; }
+    .header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        margin: 10px;
+        
+    }
+    .header {
+        display: flex;
+    
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background: #022c54;
+        
+    }
 
     .btn {
         display: inline-block;
@@ -57,6 +83,7 @@
         display: flex;
         justify-content: center;
         margin: 40px 0;
+
     }
     .smile-btn {
         position: relative;
@@ -64,9 +91,9 @@
         align-items: center;
         justify-content: center;
         gap: 30px;
-        padding: 60px 30px;
-        font-size: 40px;
-        font-weight: 500;
+        padding: 50px 100px;
+        font-size: 20px;
+        font-weight: 800;
         color: #fa06c180;
         background: #1e3d59;;
         border: 2px solid #f304e780;
@@ -85,10 +112,10 @@
     .smile-btn img {
         width: 100px;
         height: 100px;
-        border-radius: 50% 0% 50% 0%;
+        border-radius: 50%  50% ;
         object-fit: cover;
         object-position: center;
-        border: 4px solid rgba(50, 6, 249, 0.4);
+        border: 3px solid rgba(50, 6, 249, 0.4);
         box-shadow: inset 0 0 20px rgba(3, 250, 48, 0.2),
                     0 0 10px rgba(81, 6, 243, 0.5);
         background: rgba(3, 244, 83, 0.918);
@@ -161,25 +188,63 @@
     }
 
     /* Responsive */
-    @media(max-width: 600px){
-        .smile-btn {
-            flex-direction: column;
-            gap: 20px;
-            font-size: 28px;
-            padding: 40px 20px;
-        }
-        .smile-btn img {
-            width: 70px;
-            height: 70px;
-        }
-    }
+   /* Responsive Header Fix */
+@media(max-width: 800px) {
+  .header {
+    flex-direction: column;      /* Images aur text vertically aajayenge */
+    text-align: center;
+  }
+
+  .header img {
+    width: 90px;
+    height: 90px;
+    margin: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+}
+
+/* Already existing media query — just extend it safely */
+@media(max-width: 600px) {
+  .smile-btn {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 24px;
+    padding: 30px 15px;
+  }
+
+  .smile-btn img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .calculator {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .display {
+    font-size: 2em;
+  }
+}
+
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Sarvesh Kumar Singh</h1>
+<header class="header">
+    <img src="sarve.jpg"  style="align-items: right;" alt="right">
+   
+   <div> <h1>Sarvesh Kumar Singh</h1>
     <p>Web Developer | Learner | Creator</p>
+    </div>
+    
 </header>
 
 <main>
@@ -224,11 +289,10 @@
     <section id="smile">
         <div class="smile-btn-container">
             <button class="smile-btn">
+                <img src="sarve.jpg" alt="left">
+                💕💕SARVESH SINGH💕💕<br> 😎Front-end-Web Developer | Learner | Creator😎
                 
-                 <img src="sarve.jpg" alt="left">
-                💕💕SARVESH SINGH💕💕
-                
-                <img src="sarve.jpg" alt="right">
+               
 
             </button>
         </div>
