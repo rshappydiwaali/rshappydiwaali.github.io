@@ -1,463 +1,106 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarvesh Kumar Singh | मेरी वेबसाइट</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f0f4f8;
-        color: #333;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎆 Happy Diwali Celebration 🎆</title>
+  <style>
+    :root{
+      --bg:#060b1e;
+      font-family:'Poppins',sans-serif;
     }
-    .header-text p{margin: 5px 0 0;
-    font-size: 16px;
-color: black;}
-.header-text h1{margin: 0;
-    font-size: 24px;}
-    .header-text{ text-align: center;}
-
-
-    header {
-        background: #1e3d59;
-        color: white;
-        text-align: center;
-        padding: 50px 20px;
-    }
-    header h1 { font-size: 3em; margin: 0; }
-    header p { font-size: 1.2em; margin-top: 10px; }
-
-    main {
-        max-width: 1000px;
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-    section {
-        background: white;
-        padding: 30px;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    h2 { color: #1e3d59; }
-    ul { list-style: square; padding-left: 20px; }
-    .header img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid rgba(255, 255, 255, 0.6);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        margin: 10px;
-        
-    }
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        background: #022c54;
-        
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:radial-gradient(circle at 20% 20%,rgba(255,255,255,0.05),transparent 60%),radial-gradient(circle at 80% 80%,rgba(255,204,0,0.08),transparent 60%),var(--bg);
+      height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;position:relative;
     }
 
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background: #1e3d59;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: 0.3s;
-        margin-top: 10px;
-        margin-right: 10px;
-        font-weight: bold;
+    h1{
+      font-size:50px;color:#fff6bf;text-shadow:0 0 15px #ffb300,0 0 40px #ff7b00;
+      animation:titleGlow 1s ease-in-out infinite alternate;
+      z-index:2;
+      margin-top: 300px;
     }
-    .btn:hover { background: #162b44; }
-    .btn.whatsapp { background-color: #25d366; }
-    .btn.whatsapp:hover { background-color: #1ebe5b; }
+    @keyframes titleGlow{from{text-shadow:0 0 15px #ff8800,0 0 25px #ff5500;}to{text-shadow:0 0 25px #ffee66,0 0 50px #ff9900;}}
 
-    /* Smile Button Styles */
-    .smile-btn-container {
-        display: flex;
-        justify-content: center;
-        margin: 40px 0;
+    .diya{
+      position:relative;margin-top:80px;width:120px;height:70px;background:linear-gradient(to top,#441a00,#a74c00);border-radius:70px 70px 20px 20px;box-shadow:0 0 40px rgba(255,128,0,0.4);z-index:2;
+    }
+    .diya::before{
+      content:'';position:absolute;top:-55px;left:50%;transform:translateX(-50%);
+      width:25px;height:55px;border-radius:50%;
+      background:radial-gradient(circle at 50% 15%,#fff8b3 5%,#ffb200 35%,#ff6600 90%);
+      animation:flameFlicker 1s infinite ease-in-out;
+      filter:blur(1px);
+    }
+    @keyframes flameFlicker{0%,100%{transform:translateX(-50%) scale(1) rotate(0deg);opacity:.9}50%{transform:translateX(-50%) scale(1.3) rotate(-6deg);opacity:.7}}
 
+    .stars span{
+      position:absolute;width:2px;height:2px;background:white;border-radius:50%;opacity:0.8;animation:twinkle 2s infinite ease-in-out;
     }
-    .smile-btn {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 50px 100px;
-        font-size: 20px;
-        font-weight: 800;
-        color: #fa06c180;
-        background: #1e3d59;;
-        border: 2px solid #f304e780;
-        border-radius: 20px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: 0.5s;
-        flex-wrap: wrap;
-    }
-    .smile-btn:hover {
-        color: #3707e6;
-        background: #f803b3;
-        text-shadow: 0 0 5px #e8f905, 0 0 10px #fafa07, 0 0 20px #fff;
-        box-shadow: 0 0 10px #008cff, 0 0 40px #008cff, 0 0 80px #008cff;
-    }
-    .smile-btn img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%  50% ;
-        object-fit: cover;
-        object-position: center;
-        border: 3px solid rgba(50, 6, 249, 0.4);
-        box-shadow: inset 0 0 20px rgba(3, 250, 48, 0.2),
-                    0 0 10px rgba(81, 6, 243, 0.5);
-        background: rgba(3, 244, 83, 0.918);
-        transition: 0.3s ease;
-    }
-    .smile-btn:hover img {
-        transform: scale(1.05);
-        box-shadow: inset 0 0 25px rgba(255,255,255,0.3),
-                    0 0 15px rgba(0,0,0,0.7);
-    }
-    .smile-btn::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 20px;
-        box-shadow: inset 0 0 25px rgba(255,255,255,0.2);
-        pointer-events: none;
+    @keyframes twinkle{0%,90%{opacity:0.3}100%{opacity:1}}
+
+    .firework{
+      position:absolute;width:6px;height:6px;border-radius:50%;opacity:0;
+      font-size:16px;font-weight:bold;color:#ffdd00;text-align:center;
     }
 
-    /* Calculator Styles */
-    .calculator {
-        background: linear-gradient(145deg, #8e2de2, #4a00e0);
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        max-width: 350px;
-        margin: 30px auto;
+    .floating-text{
+      position:absolute;font-size:25px;font-weight:bold;color:#f57606;
+      animation:floatUp 3s ease-out forwards;
     }
-    .display {
-        background: #111;
-        color: #0ff;
-        font-size: 2.5em;
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        text-align: right;
-        overflow-x: auto;
-        box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
+    @keyframes floatUp{
+      0%{transform:translateY(0);opacity:1;}
+      100%{transform:translateY(-200px);opacity:0;}
     }
-    .keys {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
+     .festive-img{
+      position:absolute;top:15%;left:50%;transform:translateX(-50%);
+      width:300px;height:350px;object-fit:cover;border-radius:20px;
+      box-shadow:0  0 70px rgba(249, 212, 4, 0.5) ;animation:imgFade 1s infinite alternate;
+      z-index:1;
     }
-    .keys button {
-        padding: 20px;
-        font-size: 1.5em;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        color: white;
+     button{
+      margin-top:15px;padding:10px 22px;border:none;border-radius:25px;background:#ff8c00;color:white;font-weight:600;cursor:pointer;font-size:25px;box-shadow:0 0 20px #ff8c00;
+      transition:.3s;z-index:2;
     }
-    .keys button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    }
-    .clear { background: #ff4d4d; }
-    .operator { background: #1e90ff; }
-    .equal { background: #32cd32; grid-column: span 2; }
-    .number { background: #333; }
-    .decimal { background: #555; }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #1e3d59;
-        color: white;
-    }
-
-    /* Responsive Header Fix */
-@media(max-width: 800px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header img {
-    width: 90px;
-    height: 90px;
-    margin: 10px 0;
-  }
-
-  .header h1 {
-    font-size: 22px;
-  }
-
-  .header p {
-    font-size: 14px;
-  }
-}
-
-@media(max-width: 600px) {
-  .smile-btn {
-    flex-direction: column;
-    gap: 20px;
-    font-size: 24px;
-    padding: 30px 15px;
-  }
-
-  .smile-btn img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .calculator {
-    max-width: 90%;
-    padding: 20px;
-  }
-
-  .display {
-    font-size: 2em;
-  }
-}
-
- #s {
-      text-align: center;
-      background-color: rgb(34, 23, 230);
-      color: white;
-      width: 50%;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 20px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .play {
-      background-color: rgb(204, 25, 239);
-      color: white;
-      width: 100%;
-      max-width:1000px;
-      font-size: 30px;
-      border-radius: 15px;
-      margin: 30px auto;
-      padding: 10px;
-      text-align: center;
-    }
-    /* h1 aur dono side ke image ke liye */
-.msg-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-/* dono side ke image ke style */
-.side-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid white;
-}
-
-/* mobile responsive fix */
-@media (max-width: 800px) {
-  .msg-row {
-    flex-direction: column;
-  }
-  #s {
-    width: 90%;
-  }
-}
-
-
-    marquee {
-      display: block;
-      width: 100%;
-      background-color: inherit;
-      padding: 10px 0;
-    }
-    
-</style>
+    button:hover{background:#ffaa00;box-shadow:0 0 30px #ffb300;}
+  </style>
 </head>
 <body>
+  <h1>🎆 शुभ दीपावली 🎆</h1>
+   <img src="WhatsApp Image 2025-10-08 at 01.56.02_4087d9ec.jpg" class="festive-img" alt="Festive Image" />
+  <div class="diya"></div>
+  <div class="stars" id="stars"></div>
+   <button onclick="moreDeepaks()">Aur Deepak Jalao ✨</button>
 
-<header class="header">
-    <img src="sarve.jpg" alt="right">
-   <div> 
-     <h1>Sarvesh Kumar Singh</h1>
-     <p>Web Developer | Learner | Creator</p>
-   </div>
-</header>
-
-<main>
-  <div class="play">
-    <div class="msg-row">
-     <img src="sarve.jpg" alt="left image" class="side-img">
-    <h1 id="s">About</h1>
-    <img src="sarve.jpg" alt="left image" class="side-img"></div>
-    
-    <marquee direction="left" scrollamount="6">
-        
-      "😎Front-end-Web Developer | Learner | Creator😎"
-      <div class="play2">
-        "😎Front-end-Web Developer | Learner | Creator😎"
-      </div>
-    </marquee>
-  </div>
-
-    <section id="about">
-        <h2>मेरे बारे में</h2>
-        <p>नमस्ते! मैं Sarvesh हूँ। मुझे वेबसाइट बनाना, नई चीजें सीखना और टेक्नोलॉजी के साथ प्रयोग करना पसंद है। यह मेरी पहली व्यक्तिगत वेबसाइट है।</p>
-    </section>
-
-    <section id="skills">
-        <h2>मेरे कौशल</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Responsive Web Design</li>
-           
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>संपर्क करें</h2>
-        <p>आप मुझसे इस ईमेल या WhatsApp पर संपर्क कर सकते हैं:</p>
-    </section>
-
-    <section id="smile">
-        <div class="smile-btn-container">
-            <button class="smile-btn">
-                 <a href="mailto:sarveshsingh52966@gmail.com" class="btn">📧 ईमेल भेजें</a>
-            </button>
-        </div>
-    </section>
-
-    <section id="smile">
-        <div class="smile-btn-container">
-            <button class="smile-btn">
-                  <a href="https://wa.me/919956095565" target="_blank" class="btn whatsapp">💬 WhatsApp Message</a>
-            </button>
-        </div>
-    </section>
-
-    <section id="smile">
-        <div class="smile-btn-container">
-            <button class="smile-btn">
-                <img src="sarve.jpg" alt="left">
-                💕💕SARVESH SINGH💕💕<br> 😎Front-end-Web Developer | Learner | Creator😎
-            </button>
-        </div>
-    </section>
-
-    <section id="calculator">
-        <h2>Simple Calculator</h2>
-        <div class="calculator">
-            <div class="display" id="display">0</div>
-            <div class="keys">
-                <button class="smile-btn clear" data-action="clear">C</button>
-                <button class="smile-btn operator" data-action="back">←</button>
-                <button class="smile-btn operator" data-value="/">÷</button>
-                <button class="smile-btn operator" data-value="*">×</button>
-
-                <button class="smile-btn number" data-value="7">7</button>
-                <button class="smile-btn number" data-value="8">8</button>
-                <button class="smile-btn number" data-value="9">9</button>
-                <button class="smile-btn operator" data-value="-">−</button>
-
-                <button class="smile-btn number" data-value="4">4</button>
-                <button class="smile-btn number" data-value="5">5</button>
-                <button class="smile-btn number" data-value="6">6</button>
-                <button class="smile-btn operator" data-value="+">+</button>
-
-                <button class="smile-btn number" data-value="1">1</button>
-                <button class="smile-btn number" data-value="2">2</button>
-                <button class="smile-btn number" data-value="3">3</button>
-                <button class="smile-btn decimal" data-value=".">.</button>
-
-                <button class="smile-btn number" data-value="0">0</button>
-                <button class="smile-btn equal" data-action="equals">=</button>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>© 2025 Sarvesh Kumar Singh | सभी अधिकार सुरक्षित</p>
-</footer>
-
-<script>
-    const display = document.getElementById("display");
-    const keys = document.querySelectorAll(".keys button");
-    let current = "";
-    let expression = "";
-
-    function updateDisplay() {
-      display.textContent = current || expression || "0";
+  <script>
+    // Stars background
+    const stars=document.getElementById('stars');
+    for(let i=0;i<2000;i++){
+      const s=document.createElement('span');
+      s.style.left=Math.random()*100+'vw';
+      s.style.top=Math.random()*100+'vh';
+      s.style.animationDelay=Math.random()*2+'s';
+      s.style.width=s.style.height=Math.random()*3+1+'px';
+      stars.appendChild(s);
     }
 
-    function calculate() {
-      try {
-        let result = eval(expression);
-        display.textContent = result;
-        expression = String(result);
-        current = "";
-      } catch {
-        display.textContent = "Error";
-        expression = "";
-        current = "";
-      }
+    // Fireworks from bottom to top with text
+    function createFirework(){
+      const fw=document.createElement('div');
+      fw.className='floating-text';
+      fw.innerText='Wish You a very Very Happy Diwali! ✨';
+      fw.style.left=Math.random()*80+10+'vw';
+      fw.style.bottom='0px';
+      document.body.appendChild(fw);
+
+      setTimeout(()=>{
+        if(fw.parentNode) fw.parentNode.removeChild(fw);
+      },3000);
     }
 
-    keys.forEach((key) => {
-      key.addEventListener("click", () => {
-        const val = key.getAttribute("data-value");
-        const action = key.getAttribute("data-action");
-
-        if (action === "clear") {
-          current = "";
-          expression = "";
-          updateDisplay();
-        } 
-        else if (action === "back") {
-          current = current.slice(0, -1);
-          updateDisplay();
-        } 
-        else if (action === "equals") {
-          expression += current;
-          calculate();
-        } 
-        else if (val === "+" || val === "-" || val === "*" || val === "/") {
-          if (current !== "") {
-            expression += current;
-            current = "";
-          }
-          if (/[+\-*/]$/.test(expression)) {
-            expression = expression.slice(0, -1);
-          }
-          expression += val;
-          updateDisplay();
-        } 
-        else {
-          current += val;
-          updateDisplay();
-        }
-      });
-    });
-
-    updateDisplay();
-</script>
+    setInterval(createFirework, 1500);
+     
+  </script>
 </body>
 </html>
